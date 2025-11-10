@@ -1,9 +1,12 @@
 package lesson_07_11;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class ArrayLesson {
     public static void main(String[] args) {
+
+        Random random = new Random();
 
         long myValue = 0L;
         // array {0L, 0L}
@@ -26,11 +29,11 @@ public class ArrayLesson {
 
         int[] arrayIDInteger = new int[10]; // {0,0,0,0,0,0,0}
 
-        int i = 0;
+        int i1 = 0;
 
         for (int element: arrayID) {
-            arrayIDInteger[i] = element;
-            i++; // без проверки на <= с длиной первого массива
+            arrayIDInteger[i1] = element;
+            i1++; // без проверки на <= с длиной первого массива
         }
 
         System.out.println(Arrays.toString(arrayIDInteger));
@@ -50,9 +53,29 @@ public class ArrayLesson {
         }
         System.out.println(Arrays.toString(bigArray));
 
+        // {1, 2, 3},  [0][1] = 2
+        // {4, 5, 6},  [1][2] = 6
+        // {7, 8, 9}   [2][0] = 7
+
         System.out.println(array1);
         System.out.println(array2);
         System.out.println(array3);
+
+
+        int[][] matrix = new int[4][4];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = random.nextInt();
+                System.out.printf("[%d][%d]: %d \n", i, j, matrix[i][j]);
+            }
+        }
+
+        System.out.println(Arrays.deepToString(matrix));
+
+        // 0 0 0 0
+        // 0 0 0 0
+        // 0 0 0 0
+        // 0 0 0 0
 
 
         /* Задача: Автобус - 56 мест --- int[56] на каждой оставноке садятся пассажиры.

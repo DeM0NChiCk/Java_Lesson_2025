@@ -9,6 +9,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         boolean check = true;
+        boolean isOk = true;
 
         // константные значения, который нельзя будет изменить
         final int STATUS_CODE_BASE = 4;
@@ -27,6 +28,8 @@ public class Main {
             String textUserString = scanner.next(); // до первого разделителя в виде пробела \s
             System.out.println("Введите возраст: ");
             int textUserAge = scanner.nextInt(); // 12\n
+            // 123\n
+            // 12414\n
             final String COUNTRY_USER_ADMIN = "Russia";
             System.out.println("Введите свою страну: ");
             scanner.nextLine();
@@ -134,7 +137,35 @@ public class Main {
         boolean b1 = false; // это была хитрая логика которая сравнивала значения и при false res = 10, а при true res = 100
 
         if (a1 & b1) { // то в этом случае ленивая операция будет ошибочной по логике, потому что условие b1 не будет выполено
-            //TODO:
+            //TODO
+        }
+
+        if (a1 && b1 && true && false) {
+
+        }
+
+        int xLazy = 10;
+        int yLazy = 5;
+
+        xLazy++; // xLazy выполнена операция -> xLazy = xLazy + 1
+        ++xLazy; // xLazy = xLazy + 1 -> xLazy выполнена операция
+        xLazy--; // xLazy выполнена операция -> xLazy = xLazy - 1
+        --xLazy; // xLazy = xLazy - 1 -> xLazy выполнена операция
+        //         10    > 6
+        if (b1 & xLazy++ > ++yLazy) {
+            System.out.println(xLazy);
+            System.out.println(yLazy);
+        } else {
+            System.out.println(xLazy); // 11
+            System.out.println(yLazy); // 6
+        }
+//          false   11    >     6
+        if (b1 && xLazy++ > ++yLazy) {
+            System.out.println(xLazy);
+            System.out.println(yLazy);
+        } else {
+            System.out.println(xLazy); // 11
+            System.out.println(yLazy); // 6
         }
     }
 
