@@ -47,6 +47,10 @@ public class Main {
             System.out.println("НЕТ");
         }
         System.out.println(++value100); // 103
+    }
+
+    // пример, как назвать метод с решением
+    public static void v1n1() {
 
     }
 }
