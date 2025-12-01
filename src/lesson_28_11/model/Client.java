@@ -12,7 +12,7 @@ public class Client extends User {
         this.address = address;
     }
 
-    public void buyProcutInShop(Product product, int count) {
+    public void buyProductInShop(Product product, int count) {
         for (int i = 0; i<= count; i++) {
             product.removeOne();
             productCount++;

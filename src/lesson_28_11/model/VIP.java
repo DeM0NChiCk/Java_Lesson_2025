@@ -13,8 +13,8 @@ public final class VIP extends Client{
     }
 
     @Override
-    public void buyProcutInShop(Product product, int count) {
-        super.buyProcutInShop(product, count);
+    public void buyProductInShop(Product product, int count) {
+        super.buyProductInShop(product, count);
     }
 
     @Override

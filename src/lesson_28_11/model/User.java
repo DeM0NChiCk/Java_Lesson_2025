@@ -16,6 +16,13 @@ public class User {
         this.account = new Account(login, password.length());
     }
 
+    public User(String country, int age, String username, String login, String password) {
+        this.username = username;
+        this.country = country;
+        this.age = age;
+        this.account = new Account(login, password.length());
+    }
+
     public User(){}
 
     private void setUsername(String username) {

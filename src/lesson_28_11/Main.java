@@ -1,7 +1,6 @@
 package lesson_28_11;
 
-import lesson_28_11.model.Client;
-import lesson_28_11.model.User;
+import lesson_28_11.model.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +15,8 @@ public class Main {
         );
         user1.print();
 
+        System.out.println("--------------");
+
         Client client1 = new Client(
                 1,
                 "R",
@@ -25,5 +26,59 @@ public class Main {
                 "Kazan"
         );
         client1.print();
+
+        System.out.println("--------------");
+
+        Employee employee = new Employee(
+                "R",
+                30,
+                "Emp1",
+                "Emp1@itis.ru",
+                "qewrqewr",
+                111111,
+                "IT Java prog",
+                "IT"
+        );
+        System.out.println("--------------");
+        employee.print();
+        System.out.println(employee.getId());
+
+        System.out.println("--------------");
+
+        User[] users = {
+                user1,
+                client1,
+                employee,
+                new VIP(1, "R", 30, "VIP", "121234", "Kazan")
+        };
+
+        Employee userEmp = (Employee) users[2];
+        System.out.println(userEmp.getDepartment());
+        userEmp.print();
+
+        System.out.println("-------------- EMP");
+
+//        Client userClient = (Client) users[2];
+//        System.out.println(userClient.getUsername());
+//        userEmp.print();
+
+        System.out.println("-------------- VIP");
+
+        VIP userVip = (VIP) users[3];
+        System.out.println(userVip.getUsername());
+        userVip.print();
+
+        System.out.println("--------------VIP");
+
+        Client userVip2 = (VIP) (users[3]);
+        System.out.println(userVip2.getUsername());
+        userVip2.print();
+
+        System.out.println("--------------");
+        for (User user: users) {
+            user.print();
+            System.out.println("--------------");
+        }
+
     }
 }

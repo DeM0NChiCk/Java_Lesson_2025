@@ -15,14 +15,14 @@ public class Product {
     }
 
     public Product(String name, int position, int count) {
-        this.count = count;
+        this.count = Math.max(count, 0);
         this.position = position;
         this.name = name;
         price = price*count;
     }
 
     public Product(String name, int position, int count, double price) {
-        this.count = count;
+        this.count = Math.max(count, 0);
         this.position = position;
         this.name = name;
         this.price = price;
