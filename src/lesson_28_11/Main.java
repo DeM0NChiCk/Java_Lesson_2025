@@ -1,6 +1,7 @@
 package lesson_28_11;
 
 import lesson_28_11.model.*;
+import lesson_28_11.service.LoadService;
 
 public class Main {
     public static void main(String[] args) {
@@ -80,5 +81,23 @@ public class Main {
             System.out.println("--------------");
         }
 
+        Shop shop = new Shop("qewfeqw", "wewef", "wefwef", new Product[2]);
+        Storage storage = new Storage("wefwef", "wewwefewef", "wefwergvertef", 4, 10);
+        LoadService loadService = shop;
+        LoadService[] loadServices = {shop, storage};
+
+        loadService.load(new Product[5]);
+        loadService.load(new Product[5]);
+        loadService.load(new Product[5]);
+        loadService.load(new Product[5]);
+        loadService.load(new Product[5]);
+
+        loadService = storage;
+
+        loadService.load(new Product[5]);
+        loadService.load(new Product[5]);
+        loadService.load(new Product[5]);
+
+        loadServices[0].load(new Product[4]);
     }
 }

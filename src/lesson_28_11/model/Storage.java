@@ -1,6 +1,8 @@
 package lesson_28_11.model;
 
-public class Storage extends Place{
+import lesson_28_11.service.LoadService;
+
+public class Storage extends Place implements LoadService {
 
     private Product[][] loc;
 
@@ -21,6 +23,16 @@ public class Storage extends Place{
     @Override
     public void setTitle(String title) {
 
+    }
+
+    @Override
+    public void load(Product[] products) {
+        System.out.println("Загрузка хранилища");
+    }
+
+    @Override
+    public void vipOptBuyB() {
+        System.out.println("Закупка товаров у вип поставщиков");
     }
 
     // TODO: добавить возможность пополнять склад

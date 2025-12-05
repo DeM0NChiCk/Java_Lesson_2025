@@ -1,6 +1,9 @@
 package lesson_28_11.model;
 
-public final class VIP extends Client{
+import lesson_28_11.service.VIPAService;
+import lesson_28_11.service.VIPBService;
+
+public final class VIP extends Client implements VIPAService, VIPBService {
 
     public boolean status = true;
 
@@ -21,5 +24,16 @@ public final class VIP extends Client{
     public void print() {
         super.print();
         System.out.println("Я VIP");
+    }
+
+    @Override
+    public void vipBuyA() {
+        System.out.println("ВИП ФИЗ ЛИЦО ПОКУПАЕТ ТОВАР");
+
+    }
+
+    @Override
+    public void vipOptBuyB() {
+        System.out.println("ВИП ЮР ЛИЦО ПОКУПАЕТ ТОВАР");
     }
 }
