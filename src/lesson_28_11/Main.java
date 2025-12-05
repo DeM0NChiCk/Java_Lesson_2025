@@ -99,5 +99,7 @@ public class Main {
         loadService.load(new Product[5]);
 
         loadServices[0].load(new Product[4]);
+        loadServices[0].load(new Product[4]);
+        loadServices[0].load(new Product[4]);
     }
 }
