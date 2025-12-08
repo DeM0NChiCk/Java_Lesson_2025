@@ -6,5 +6,4 @@ public interface LoadService extends VIPBService {
 
     void load(Product[] products);
 
-
 }

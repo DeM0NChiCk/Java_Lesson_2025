@@ -1,12 +1,15 @@
 package lesson_28_11.model;
 
+import lesson_28_11.service.FastLoadService;
+import lesson_28_11.service.impl.FastLoadServiceImpl;
 import lesson_28_11.service.LoadService;
 
 import java.util.Arrays;
 
-public class Shop extends Place implements LoadService {
+public class Shop extends Place implements LoadService, FastLoadService {
 
     private Product[] stand;
+    private final FastLoadService fastLoadService = new FastLoadServiceImpl();
 
     public Shop(String address, String square, String title, Product[] products) {
         super(address, square, title);
@@ -41,6 +44,11 @@ public class Shop extends Place implements LoadService {
     public void vipOptBuyB() {
         System.out.println("Продажа продуктов вип клиентам");
 
+    }
+
+    @Override
+    public void fastLoad(Product[] products) {
+        System.out.println("Более быстрая реализация загрузки");
     }
 
     // TODO:
