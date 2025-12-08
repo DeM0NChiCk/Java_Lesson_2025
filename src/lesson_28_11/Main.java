@@ -1,6 +1,8 @@
 package lesson_28_11;
 
 import lesson_28_11.model.*;
+import lesson_28_11.service.FastLoadService;
+import lesson_28_11.service.impl.FastLoadServiceImpl;
 import lesson_28_11.service.LoadService;
 
 public class Main {
@@ -99,5 +101,10 @@ public class Main {
         loadService.load(new Product[5]);
 
         loadServices[0].load(new Product[4]);
+
+        FastLoadService fastLoadService = new FastLoadServiceImpl();
+        FastLoadService fastLoadService1 = shop;
+
+
     }
 }
