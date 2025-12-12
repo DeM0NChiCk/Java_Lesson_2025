@@ -24,7 +24,7 @@ public class Main {
                 1,
                 "R",
                 22,
-                " ",
+                "client1",
                 "12345",
                 "Kazan"
         );
@@ -84,7 +84,7 @@ public class Main {
         }
 
         Shop shop = new Shop("qewfeqw", "wewef", "wefwef", new Product[2]);
-        Storage storage = new Storage("wefwef", "wewwefewef", "wefwergvertef", 4, 10);
+        Storage storage = new Storage("KAZAN", "storage1", "storage 1", 4, 10);
         LoadService loadService = shop;
         LoadService[] loadServices = {shop, storage};
 
@@ -107,6 +107,8 @@ public class Main {
         FastLoadService fastLoadService = new FastLoadServiceImpl();
         FastLoadService fastLoadService1 = shop;
 
+        System.out.println(storage);
+        System.out.println(client1);
 
     }
 }

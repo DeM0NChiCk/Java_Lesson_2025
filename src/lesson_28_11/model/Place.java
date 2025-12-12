@@ -26,4 +26,9 @@ public abstract class Place {
     public abstract String getTitle();
 
     public abstract void setTitle(String title);
+
+    @Override
+    public String toString() {
+        return this.title;
+    }
 }

@@ -60,5 +60,15 @@ public class User {
         private String print() {
             return "Login: " + username;
         }
+
+        @Override
+        public String toString() {
+            return "Account(login = " + username + ")";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return account.toString();
     }
 }

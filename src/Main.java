@@ -1,3 +1,7 @@
+import solid.open_close.EmailNotification;
+import solid.open_close.NotificationServiceLike;
+import solid.open_close.SmsNotification;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Привет мир!");
@@ -47,6 +51,10 @@ public class Main {
             System.out.println("НЕТ");
         }
         System.out.println(++value100); // 103
+
+        NotificationServiceLike notificationServiceLike = new EmailNotification();
+
+        notificationServiceLike.send();
     }
 
     // пример, как назвать метод с решением

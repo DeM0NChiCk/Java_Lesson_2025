@@ -25,4 +25,14 @@ public class Client extends User {
     public void print() {
         System.out.println("Address: " + address + "\nCount product:" + productCount);
     }
+
+    @Override
+    public String toString() {
+        return "Client(id = " + getId() + ",u sername = " + getUsername() + ", age = " + getAge() + ", " + super.toString() + ", address = " + address + ", productCount = " + productCount + ", countBuy = " + countBuy + ")";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

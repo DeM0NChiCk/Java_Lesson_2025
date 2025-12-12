@@ -17,7 +17,7 @@ public class Storage extends Place implements LoadService {
     // TODO: title + address
     @Override
     public String getTitle() {
-        return "";
+        return super.toString() + getAddress();
     }
     // TODO: Возможность изменять название магазина, есть только у Employee с job = "director"
     @Override
@@ -36,4 +36,10 @@ public class Storage extends Place implements LoadService {
     }
 
     // TODO: добавить возможность пополнять склад
+
+
+    @Override
+    public String toString() {
+        return this.getTitle();
+    }
 }
