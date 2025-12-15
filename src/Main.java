@@ -1,6 +1,8 @@
 import solid.open_close.EmailNotification;
 import solid.open_close.NotificationServiceLike;
 import solid.open_close.SmsNotification;
+import solid.open_close.TelegramNotification;
+import solid.single_responsibility.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -55,10 +57,30 @@ public class Main {
         NotificationServiceLike notificationServiceLike = new EmailNotification();
 
         notificationServiceLike.send();
+
+        v1n1();
     }
 
     // пример, как назвать метод с решением
     public static void v1n1() {
+        Order order = new Order("wefew", 132);
+        order.printOrder();
+
+
+        OrderLike orderLike = new OrderLike("wefew", 132);
+        PrinterService printerService = new PrinterNewServiceImpl();
+
+        printerService.print(orderLike.getProduct());
+        printerService.print(orderLike.getProduct());
+        printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());
+
+        printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());printerService.print(orderLike.getProduct());
+
+
+        NotificationServiceLike notificationServiceLike = new SmsNotification();
+
+        notificationServiceLike.send();
+
 
     }
 }

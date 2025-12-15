@@ -1,6 +1,6 @@
 package solid.interface_segregation;
 
-public class RobotWorkerLike implements WorkerLike{
+public class RobotWorkerLike implements WorkerLike {
     @Override
     public void work() {
 
