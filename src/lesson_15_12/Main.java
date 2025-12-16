@@ -1,6 +1,7 @@
 package lesson_15_12;
 
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class Main {
     String exStr;
@@ -67,5 +68,17 @@ public class Main {
         System.out.println(strJoin.lastIndexOf("aa"));
         System.out.println(concatStr.strip());
         System.out.println(strJoin.replace("Aaa", "\t").strip());
+        String text = "Hello! Dima, Java: the best!";
+        String[] words = text.split("\\s*(\\s|,|!|\\.)\\s*");
+        for(String word : words){
+            System.out.println(word);
+        }
+
+        String input = "Hello Java! Hello JavaScript! JavaSE 25.";
+        Pattern pattern = Pattern.compile("[ ,.!?]");
+        String[] words2 = pattern.split(input);
+        for(String word:words2)
+            System.out.println(word);
+
     }
 }
