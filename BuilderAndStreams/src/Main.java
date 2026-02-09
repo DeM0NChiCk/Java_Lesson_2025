@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
         int[] a = new int[] {1,2,3,4,5};
+        System.out.println(Arrays.toString(a));
 
         IntStream stream = Arrays.stream(a).filter(x -> x % 2 == 0);
 
@@ -17,6 +18,7 @@ public class Main {
         a[1] = 3;
 
         stream.forEach(System.out::println);
+        System.out.println(Arrays.toString(a));
         System.out.println("---------------------------------------------------");
 
         Stream<String> citiesStream = Stream.of("Париж", "Лондон", "Мадрид","Берлин", "Брюссель");
@@ -49,7 +51,7 @@ public class Main {
 
         Arrays.stream(products)
                 .filter(x -> x.price > 30)
-                .sorted((x,y) -> Integer.compare(x.price, y.price))
+                .sorted(Comparator.comparingInt(x -> x.price))
                 .forEach(x -> System.out.println(x.name));
 
         System.out.println("---------------------------------------------------");
@@ -70,10 +72,11 @@ public class Main {
 
         Stream<String> people1 = Stream.of("Tom", "Bob", "Sam");
         Stream<String> people2 = Stream.of("Alice", "Kate", "Sam");
-
+//        people1.forEach(System.out::println); // stream has already been operated upon or closed
         Stream.concat(people1, people2)
                 .distinct() // С помощью этого метода можно удалить повторяющиеся элементы из потока
                 .forEach(System.out::println);
+//        people2.forEach(System.out::println); // stream has already been operated upon or closed
 
         System.out.println("---------------------------------------------------");
 
@@ -84,7 +87,7 @@ public class Main {
                 .count();
 
         System.out.println("countCity: " + countCity);
-
+//TODO: ПРОЖОЛЖИТЬ
         System.out.println("---------------------------------------------------");
 
         Optional<Product> product = Arrays.stream(products)
