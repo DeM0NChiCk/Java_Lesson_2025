@@ -45,7 +45,7 @@ public class Main {
                 .filter(x -> x.price < 30)
                 .map(x -> x.name)
                 .sorted()
-                .forEach(System.out::println);
+                .forEach(System.out::println); // .forEach(x -> System.out.println(x))
 
         System.out.println("---------------------------------------------------");
 
@@ -97,11 +97,11 @@ public class Main {
 //        } else {
 //            System.out.println(product.get().name);
 //        }
-
+//
 //        if (product.isPresent()) {
 //            System.out.println(product.get().name);
 //        }
-
+//
 //        Product product1 = product.orElse(new Product("empty", 0));
 //
 //        product.ifPresent(x -> System.out.println(x.name));
@@ -113,9 +113,14 @@ public class Main {
                 () -> System.out.println("no such element")
         );
 
+        Arrays.stream(products)
+                .max((x, b) -> Integer.compare(x.price, b.price))
+                .ifPresentOrElse(
+                        x -> System.out.println(x.name),
+                        () -> System.out.println("no such element")
+                );
 
         System.out.println("---------------------------------------------------");
-
 
         Optional<Integer> sum = Arrays.stream(products)
                 .map(x -> x.price)
@@ -127,6 +132,7 @@ public class Main {
                 () -> System.out.println(1000)
         );
 
+
         System.out.println("---------------------------------------------------");
 
         int sum2 = Arrays.stream(products)
@@ -135,13 +141,18 @@ public class Main {
 
         System.out.println(sum2);
 
+        System.out.println(Arrays.stream(products)
+                .map(x -> x.price)
+                .reduce(1000, (x, y) -> x + y)
+        );
+
         System.out.println("---------------------------------------------------");
 
         List<Product> list1 = Arrays.stream(products).toList();
 
-        Set<Product> list2 = Arrays.stream(products).collect(Collectors.toSet());
+        Set<Product> list2 = Arrays.stream(products).collect(Collectors.toSet()); // но для Set требуется реализация .equals() и .hashcode() у объекта product
 
-        Map<String, Integer> list = Arrays.stream(products)
+        Map<String, Integer> list = Arrays.stream(products) // // но для Map требуется реализация .equals() и .hashcode() у аргументов product
                 .collect(Collectors.toMap(
                         x -> x.name,
                         x -> x.price));
@@ -191,7 +202,7 @@ public class Main {
         Arrays.stream(products)
                 .flatMap(x -> Stream.of(
                         x.name + ": Цена со скидкой - " + x.price * 0.9,
-                        x.name + ": Цена  - " + x.price,
+                        x.name + ": Цена - " + x.price,
                         x.name + ": Цена после повышения - " + x.price * 1.2))
                 .forEach(System.out::println);
 

@@ -25,5 +25,4 @@ public class TasksCollectors {
                 .map(Map.Entry::getKey)
                 .orElse("None");
     }
-
 }
